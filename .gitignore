@@ -1,0 +1,9 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+/MegaDesk_1.1_JamesKennedy/MegaDesk_1.1_JamesKennedy/obj/Release
+/MegaDesk1.1-BradKellogg/.vs
+/MegaDesk1.1-BradKellogg/MegaDesk-3-BradKellogg/obj/Release
+/MegaDesk1.1-BradKellogg/MegaDesk-3-BradKellogg/obj/Debug

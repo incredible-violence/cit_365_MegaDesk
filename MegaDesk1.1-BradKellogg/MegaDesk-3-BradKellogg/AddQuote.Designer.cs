@@ -64,7 +64,7 @@
             this.addQuoteButton.TabIndex = 8;
             this.addQuoteButton.Text = "Add Quote";
             this.addQuoteButton.UseVisualStyleBackColor = true;
-            this.addQuoteButton.Click += new System.EventHandler(this.addQuoteButton_Click);
+            this.addQuoteButton.Click += new System.EventHandler(this.AddQuoteButton_Click);
             // 
             // cancelButton
             // 
@@ -76,7 +76,7 @@
             this.cancelButton.TabIndex = 9;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
-            this.cancelButton.Click += new System.EventHandler(this.cancelButton_Click);
+            this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // widthInput
             // 
@@ -85,8 +85,8 @@
             this.widthInput.Name = "widthInput";
             this.widthInput.Size = new System.Drawing.Size(100, 30);
             this.widthInput.TabIndex = 2;
-            this.widthInput.Validating += new System.ComponentModel.CancelEventHandler(this.widthInput_Validating);
-            this.widthInput.Validated += new System.EventHandler(this.widthInput_Validated);
+            this.widthInput.Validating += new System.ComponentModel.CancelEventHandler(this.WidthInput_Validating);
+            this.widthInput.Validated += new System.EventHandler(this.WidthInput_Validated);
             // 
             // widthLabel
             // 
@@ -115,8 +115,8 @@
             this.depthInput.Name = "depthInput";
             this.depthInput.Size = new System.Drawing.Size(100, 30);
             this.depthInput.TabIndex = 3;
-            this.depthInput.Validating += new System.ComponentModel.CancelEventHandler(this.depthInput_Validating);
-            this.depthInput.Validated += new System.EventHandler(this.depthInput_Validated);
+            this.depthInput.Validating += new System.ComponentModel.CancelEventHandler(this.DepthInput_Validating);
+            this.depthInput.Validated += new System.EventHandler(this.DepthInput_Validated);
             // 
             // widthErrorProvider
             // 
@@ -139,7 +139,7 @@
             this.heightInput.Name = "heightInput";
             this.heightInput.Size = new System.Drawing.Size(100, 30);
             this.heightInput.TabIndex = 4;
-            this.heightInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.heightInput_KeyPress);
+            this.heightInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.HeightInput_KeyPress);
             // 
             // depthErrorProvider
             // 
@@ -162,8 +162,8 @@
             this.drawersInput.Name = "drawersInput";
             this.drawersInput.Size = new System.Drawing.Size(112, 30);
             this.drawersInput.TabIndex = 5;
-            this.drawersInput.Validating += new System.ComponentModel.CancelEventHandler(this.drawersInput_Validating);
-            this.drawersInput.Validated += new System.EventHandler(this.drawersInput_Validated);
+            this.drawersInput.Validating += new System.ComponentModel.CancelEventHandler(this.DrawersInput_Validating);
+            this.drawersInput.Validated += new System.EventHandler(this.DrawersInput_Validated);
             // 
             // nameLabel
             // 

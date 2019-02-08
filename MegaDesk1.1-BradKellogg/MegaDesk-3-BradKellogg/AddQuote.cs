@@ -17,7 +17,7 @@ namespace MegaDesk_3_BradKellogg
             InitializeComponent();
         }
 
-        private void addQuoteButton_Click(object sender, EventArgs e)
+        private void AddQuoteButton_Click(object sender, EventArgs e)
         {
             int spaceIndex = nameInput.Text.IndexOf(' ');
             string tempfName = nameInput.Text.Substring(0, spaceIndex);
@@ -36,7 +36,7 @@ namespace MegaDesk_3_BradKellogg
             Close();
         }
 
-        private void cancelButton_Click(object sender, EventArgs e)
+        private void CancelButton_Click(object sender, EventArgs e)
         {
             var mainMenu = (MainMenu)Tag;
             mainMenu.Show();
@@ -146,7 +146,7 @@ namespace MegaDesk_3_BradKellogg
             }
         }
 
-        private void widthInput_Validating(object sender, CancelEventArgs e)
+        private void WidthInput_Validating(object sender, CancelEventArgs e)
         {
             string errorMsg;
             if (!ValidWidth(widthInput.Text, out errorMsg))
@@ -160,7 +160,7 @@ namespace MegaDesk_3_BradKellogg
             }
         }
 
-        private void depthInput_Validating(object sender, CancelEventArgs e)
+        private void DepthInput_Validating(object sender, CancelEventArgs e)
         {
             string errorMsg;
             if (!ValidDepth(depthInput.Text, out errorMsg))
@@ -174,7 +174,7 @@ namespace MegaDesk_3_BradKellogg
             }
         }
 
-        private void drawersInput_Validating(object sender, CancelEventArgs e)
+        private void DrawersInput_Validating(object sender, CancelEventArgs e)
         {
             string errorMsg;
             if (!ValidDrawers(drawersInput.Text, out errorMsg))
@@ -188,25 +188,25 @@ namespace MegaDesk_3_BradKellogg
             }
         }
 
-        private void widthInput_Validated(object sender, EventArgs e)
+        private void WidthInput_Validated(object sender, EventArgs e)
         {
             // If all conditions have been met, clear the ErrorProvider of errors.
             widthErrorProvider.SetError(widthInput, "");
         }
 
-        private void depthInput_Validated(object sender, EventArgs e)
+        private void DepthInput_Validated(object sender, EventArgs e)
         {
             // If all conditions have been met, clear the ErrorProvider of errors.
             depthErrorProvider.SetError(depthInput, "");
         }
 
-        private void drawersInput_Validated(object sender, EventArgs e)
+        private void DrawersInput_Validated(object sender, EventArgs e)
         {
             // If all conditions have been met, clear the ErrorProvider of errors.
             drawersErrorProvider.SetError(drawersInput, "");
         }
 
-        private void heightInput_KeyPress(object sender, KeyPressEventArgs e)
+        private void HeightInput_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!Char.IsDigit(e.KeyChar))
             {

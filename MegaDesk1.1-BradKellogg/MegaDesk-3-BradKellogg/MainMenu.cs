@@ -17,7 +17,7 @@ namespace MegaDesk_3_BradKellogg
             InitializeComponent();
         }
 
-        private void addQuoteButton_Click(object sender, EventArgs e)
+        private void AddQuoteButton_Click(object sender, EventArgs e)
         {
             AddQuote addNewQuoteForm = new AddQuote();
             addNewQuoteForm.Tag = this;
@@ -25,7 +25,7 @@ namespace MegaDesk_3_BradKellogg
             Hide();
         }
 
-        private void viewQuotesButton_Click(object sender, EventArgs e)
+        private void ViewQuotesButton_Click(object sender, EventArgs e)
         {
             ViewAllQuotes viewAllQuotesForm = new ViewAllQuotes();
             viewAllQuotesForm.Tag = this;
@@ -33,7 +33,7 @@ namespace MegaDesk_3_BradKellogg
             Hide();
         }
 
-        private void searchQuotesButton_Click(object sender, EventArgs e)
+        private void SearchQuotesButton_Click(object sender, EventArgs e)
         {
             SearchQuotes searchQuotesForm = new SearchQuotes();
             searchQuotesForm.Tag = this;

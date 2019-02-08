@@ -46,7 +46,7 @@
             this.addQuoteButton.TabIndex = 0;
             this.addQuoteButton.Text = "Add New Quote";
             this.addQuoteButton.UseVisualStyleBackColor = true;
-            this.addQuoteButton.Click += new System.EventHandler(this.addQuoteButton_Click);
+            this.addQuoteButton.Click += new System.EventHandler(this.AddQuoteButton_Click);
             // 
             // viewQuotesButton
             // 
@@ -58,7 +58,7 @@
             this.viewQuotesButton.TabIndex = 1;
             this.viewQuotesButton.Text = "View Quotes";
             this.viewQuotesButton.UseVisualStyleBackColor = true;
-            this.viewQuotesButton.Click += new System.EventHandler(this.viewQuotesButton_Click);
+            this.viewQuotesButton.Click += new System.EventHandler(this.ViewQuotesButton_Click);
             // 
             // searchQuotesButton
             // 
@@ -70,7 +70,7 @@
             this.searchQuotesButton.TabIndex = 2;
             this.searchQuotesButton.Text = "Search Quotes";
             this.searchQuotesButton.UseVisualStyleBackColor = true;
-            this.searchQuotesButton.Click += new System.EventHandler(this.searchQuotesButton_Click);
+            this.searchQuotesButton.Click += new System.EventHandler(this.SearchQuotesButton_Click);
             // 
             // pictureBox1
             // 
