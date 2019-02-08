@@ -29,14 +29,16 @@
         private void InitializeComponent()
         {
             this.BackButton = new System.Windows.Forms.Button();
-            this.searchBox = new System.Windows.Forms.TextBox();
+            this.SearchComboBox = new System.Windows.Forms.ComboBox();
+            this.SearchButton = new System.Windows.Forms.Button();
+            this.ResultsBox = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // BackButton
             // 
             this.BackButton.AutoSize = true;
             this.BackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackButton.Location = new System.Drawing.Point(160, 267);
+            this.BackButton.Location = new System.Drawing.Point(199, 495);
             this.BackButton.Name = "BackButton";
             this.BackButton.Size = new System.Drawing.Size(120, 35);
             this.BackButton.TabIndex = 2;
@@ -44,21 +46,41 @@
             this.BackButton.UseVisualStyleBackColor = true;
             this.BackButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
-            // searchBox
+            // SearchComboBox
             // 
-            this.searchBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchBox.Location = new System.Drawing.Point(160, 79);
-            this.searchBox.Name = "searchBox";
-            this.searchBox.Size = new System.Drawing.Size(170, 30);
-            this.searchBox.TabIndex = 3;
-            this.searchBox.Text = "Search";
+            this.SearchComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchComboBox.FormattingEnabled = true;
+            this.SearchComboBox.Location = new System.Drawing.Point(12, 12);
+            this.SearchComboBox.Name = "SearchComboBox";
+            this.SearchComboBox.Size = new System.Drawing.Size(166, 28);
+            this.SearchComboBox.TabIndex = 3;
+            // 
+            // SearchButton
+            // 
+            this.SearchButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.SearchButton.Location = new System.Drawing.Point(184, 11);
+            this.SearchButton.Name = "SearchButton";
+            this.SearchButton.Size = new System.Drawing.Size(135, 28);
+            this.SearchButton.TabIndex = 4;
+            this.SearchButton.Text = "Search";
+            this.SearchButton.UseVisualStyleBackColor = true;
+            // 
+            // ResultsBox
+            // 
+            this.ResultsBox.FormattingEnabled = true;
+            this.ResultsBox.Location = new System.Drawing.Point(12, 59);
+            this.ResultsBox.Name = "ResultsBox";
+            this.ResultsBox.Size = new System.Drawing.Size(307, 420);
+            this.ResultsBox.TabIndex = 5;
             // 
             // SearchQuotes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(684, 361);
-            this.Controls.Add(this.searchBox);
+            this.ClientSize = new System.Drawing.Size(331, 542);
+            this.Controls.Add(this.ResultsBox);
+            this.Controls.Add(this.SearchButton);
+            this.Controls.Add(this.SearchComboBox);
             this.Controls.Add(this.BackButton);
             this.Name = "SearchQuotes";
             this.Text = "MegaDesk";
@@ -70,6 +92,8 @@
         #endregion
 
         private System.Windows.Forms.Button BackButton;
-        private System.Windows.Forms.TextBox searchBox;
+        private System.Windows.Forms.ComboBox SearchComboBox;
+        private System.Windows.Forms.Button SearchButton;
+        private System.Windows.Forms.ListBox ResultsBox;
     }
 }
