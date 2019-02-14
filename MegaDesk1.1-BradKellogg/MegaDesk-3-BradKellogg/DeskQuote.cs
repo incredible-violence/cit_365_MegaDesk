@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -132,6 +134,17 @@ namespace MegaDesk_3_BradKellogg
         {
             string output = firstName + ' ' + lastName + '\t' + rushDays + '\t' + quote + '\t' + orderDate + Environment.NewLine;
             System.IO.File.AppendAllText(@filePath, output);
+        }
+
+        public void outputToJson(string filePath, DeskQuote desk)
+        {
+            File.WriteAllText(@filePath, JsonConvert.SerializeObject(desk));
+
+            using (StreamWriter file = File.CreateText(@filePath))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                serializer.Serialize(file, desk);
+            }
         }
     }
 }

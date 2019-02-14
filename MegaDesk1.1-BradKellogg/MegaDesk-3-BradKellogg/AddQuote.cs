@@ -31,6 +31,8 @@ namespace MegaDesk_3_BradKellogg
 
             quote.outputToFile("C:\\Users\\Brad\\source\\repos\\MegaDesk1.1-BradKellogg\\MegaDesk-3-BradKellogg\\quotes.txt");
 
+            quote.outputToJson("", quote);
+
             var mainMenu = (MainMenu)Tag;
             mainMenu.Show();
             Close();
@@ -212,6 +214,11 @@ namespace MegaDesk_3_BradKellogg
             {
                 heightInput.Text = heightInput.Text.Substring(0, heightInput.Text.Length - 1);
             }
+        }
+
+        private void AddQuote_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

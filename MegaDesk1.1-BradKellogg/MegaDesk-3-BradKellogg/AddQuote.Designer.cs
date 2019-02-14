@@ -272,6 +272,7 @@
             this.Controls.Add(this.addQuoteButton);
             this.Name = "AddQuote";
             this.Text = "MegaDesk";
+            this.Load += new System.EventHandler(this.AddQuote_Load);
             ((System.ComponentModel.ISupportInitialize)(this.widthErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.depthErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drawersErrorProvider)).EndInit();
