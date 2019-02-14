@@ -29,9 +29,9 @@ namespace MegaDesk_3_BradKellogg
             DeskQuote quote = new DeskQuote(tempfName, tempLName, Int32.Parse(rushComboBox.Text), DateTime.Now);
             quote.setQuote(quote.calcRushPrice(desk.getWidth(), desk.getDepth()) + desk.calcDeskPrice());
 
-            quote.outputToFile("C:\\Users\\Brad\\source\\repos\\MegaDesk1.1-BradKellogg\\MegaDesk-3-BradKellogg\\quotes.txt");
+            quote.outputToFile("quotes.txt");
 
-            quote.outputToJson("", quote);
+            quote.outputToJson("quotes.json", quote);
 
             var mainMenu = (MainMenu)Tag;
             mainMenu.Show();

@@ -17,10 +17,10 @@ namespace MegaDesk_3_BradKellogg
         {
             InitializeComponent();
 
-            if (new FileInfo("C:\\Users\\Brad\\source\\repos\\MegaDesk1.1-BradKellogg\\MegaDesk-3-BradKellogg\\quotes.txt").Length > 0)
+            if (new FileInfo("quotes.txt").Length > 0)
             {
                 List<string> lines = File
-                    .ReadLines("C:\\Users\\Brad\\source\\repos\\MegaDesk1.1-BradKellogg\\MegaDesk-3-BradKellogg\\quotes.txt")
+                    .ReadLines("quotes.txt")
                     .Select(line => line.TrimEnd('#'))
                     .ToList();
                 quotesListBox.DataSource = lines;
