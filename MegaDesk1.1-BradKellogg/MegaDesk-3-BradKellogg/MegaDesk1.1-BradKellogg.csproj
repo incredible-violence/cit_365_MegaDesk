@@ -121,6 +121,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="quotes.txt" />
+    <Content Include="rushOrder.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

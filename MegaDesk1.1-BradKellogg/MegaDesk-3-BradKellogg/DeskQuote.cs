@@ -90,65 +90,88 @@ namespace MegaDesk_3_BradKellogg
         // Calculate Rush Cost
         private int RushCost(int surfaceArea, int days)
         {
-            if (days == 3)
+            StreamReader reader = new StreamReader("rushOrder.txt");
+            while (reader.EndOfStream == false)
             {
-                if (surfaceArea < 1000)
-                {
-                    return 60;
-                }
-                else if (surfaceArea >= 1000 && surfaceArea <= 2000)
-                {
-                    return 70;
-                }
-                else if (surfaceArea > 2000)
-                {
-                    return 80;
-                }
-                else
-                {
-                    MessageBox.Show("How did you even do this", "CATASTROPHIC ERROR");
-                }
+                string line = reader.ReadLine();
+                Console.WriteLine(line);
             }
-            else if (days == 5)
+
+            var input = File.ReadAllLines("rushOrder.txt");
+            int cols = surfaceArea;
+            int rows = days;
+            int[][] readArray = new int[cols][];
+
+            for (int i = 0; i < cols; i++)
             {
-                if (surfaceArea < 1000)
+                for (int j = 0; j < rows; j++)
                 {
-                    return 40;
+                    readArray[i][j] = 0;
                 }
-                else if (surfaceArea >= 1000 && surfaceArea <= 2000)
-                {
-                    return 50;
-                }
-                else if (surfaceArea > 2000)
-                {
-                    return 60;
-                }
-                else
-                {
-                    MessageBox.Show("How did you even do this", "CATASTROPHIC ERROR");
-                }
+
             }
-            else if (days == 7)
-            {
-                if (surfaceArea < 1000)
-                {
-                    return 30;
-                }
-                else if (surfaceArea >= 1000 && surfaceArea <= 2000)
-                {
-                    return 35;
-                }
-                else if (surfaceArea > 2000)
-                {
-                    return 40;
-                }
-                else
-                {
-                    MessageBox.Show("How did you even do this", "CATASTROPHIC ERROR");
-                }
-            }
-            return 1;
+            reader.Close();
+            return 0;
         }
+            /* if (days == 3)
+             {
+                 if (surfaceArea < 1000)
+                 {
+                     return 60;
+                 }
+                 else if (surfaceArea >= 1000 && surfaceArea <= 2000)
+                 {
+                     return 70;
+                 }
+                 else if (surfaceArea > 2000)
+                 {
+                     return 80;
+                 }
+                 else
+                 {
+                     MessageBox.Show("How did you even do this", "CATASTROPHIC ERROR");
+                 }
+             }
+             else if (days == 5)
+             {
+                 if (surfaceArea < 1000)
+                 {
+                     return 40;
+                 }
+                 else if (surfaceArea >= 1000 && surfaceArea <= 2000)
+                 {
+                     return 50;
+                 }
+                 else if (surfaceArea > 2000)
+                 {
+                     return 60;
+                 }
+                 else
+                 {
+                     MessageBox.Show("How did you even do this", "CATASTROPHIC ERROR");
+                 }
+             }
+             else if (days == 7)
+             {
+                 if (surfaceArea < 1000)
+                 {
+                     return 30;
+                 }
+                 else if (surfaceArea >= 1000 && surfaceArea <= 2000)
+                 {
+                     return 35;
+                 }
+                 else if (surfaceArea > 2000)
+                 {
+                     return 40;
+                 }
+                 else
+                 {
+                     MessageBox.Show("How did you even do this", "CATASTROPHIC ERROR");
+                 }
+             }
+             return 1;*/
+        
 
         // calculate cost of surface area
         private int SurfaceAreaCost(int size)
