@@ -120,6 +120,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
+=======
+    <Content Include="quotes.txt" />
+>>>>>>> 1ab0304d7f10ed62e4a70bd914d0cd38e4e5ceed
     <Content Include="rushOrder.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
