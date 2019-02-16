@@ -33,6 +33,7 @@
             this.viewQuotesButton = new System.Windows.Forms.Button();
             this.searchQuotesButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.exitButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -81,11 +82,24 @@
             this.pictureBox1.TabIndex = 3;
             this.pictureBox1.TabStop = false;
             // 
+            // exitButton
+            // 
+            this.exitButton.AutoSize = true;
+            this.exitButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.exitButton.Location = new System.Drawing.Point(70, 227);
+            this.exitButton.Name = "exitButton";
+            this.exitButton.Size = new System.Drawing.Size(161, 35);
+            this.exitButton.TabIndex = 4;
+            this.exitButton.Text = "Exit";
+            this.exitButton.UseVisualStyleBackColor = true;
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
+            // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(684, 361);
+            this.Controls.Add(this.exitButton);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.searchQuotesButton);
             this.Controls.Add(this.viewQuotesButton);
@@ -104,6 +118,7 @@
         private System.Windows.Forms.Button viewQuotesButton;
         private System.Windows.Forms.Button searchQuotesButton;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button exitButton;
     }
 }
 
