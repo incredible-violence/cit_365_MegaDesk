@@ -1,0 +1,2 @@
+Customer Name: asdf	Quote Amount: 1537	Quote Date: 02/15/19 12:00:00 AM	Desk Width: 44	Desk Depth: 44	Drawers: 4	Rush Days: 0
+Customer Name: asdf	Quote Amount: 1537	Quote Date: 02/15/19 12:00:00 AM	Desk Width: 44	Desk Depth: 44	Drawers: 4	Rush Days: 0

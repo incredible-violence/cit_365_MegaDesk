@@ -12,10 +12,13 @@ namespace MegaDesk_3_BradKellogg
 {
     public partial class AddQuote : Form
     {
+        Material mat;
+
         public AddQuote()
         {
             InitializeComponent();
-            materialComboBox.DataSource = Enum.GetNames(typeof(Material));
+            List<Material> materials = Enum.GetValues(typeof(Material)).Cast<Material>().ToList();
+            materialComboBox.DataSource = materials;
         }
 
         private void AddQuoteButton_Click(object sender, EventArgs e)
@@ -27,8 +30,15 @@ namespace MegaDesk_3_BradKellogg
             int drawers = int.Parse(drawersInput.Text);
             int rushD = int.Parse(rushComboBox.Text);
 
-            string mats = (string)materialComboBox.SelectedValue; 
-            
+            //string mats = (Material)materialComboBox.SelectedValue; 
+            try
+            {
+                mat = (Material)materialComboBox.SelectedValue;
+            }
+            catch (Exception)
+            {
+
+            }
 
             DeskQuote quote = new DeskQuote(width, depth, drawers, mats, rushD, customer);
 
