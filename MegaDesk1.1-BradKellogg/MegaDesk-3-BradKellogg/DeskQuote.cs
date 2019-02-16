@@ -1,11 +1,8 @@
-﻿using Newtonsoft.Json;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using Newtonsoft.Json;
+
 
 namespace MegaDesk_3_BradKellogg
 {
@@ -44,7 +41,7 @@ namespace MegaDesk_3_BradKellogg
             newDesk.Width = width;
             newDesk.Depth = depth;
             newDesk.numDrawers = drawers;
-            //newDesk.deskMaterial = material;
+            newDesk.deskMaterial = material;
             RushDays = rushDays;
             CustomerName = customer;
 
@@ -69,7 +66,6 @@ namespace MegaDesk_3_BradKellogg
         // Calculate Rush Cost
         private int RushCost(int surfaceArea, int days)
         {
-<<<<<<< HEAD
             StreamReader reader = new StreamReader(@"rushOrder.txt");
 
             // James' Attempt
@@ -124,91 +120,7 @@ namespace MegaDesk_3_BradKellogg
             return 0;
         }
     
-=======
-            StreamReader reader = new StreamReader("rushOrder.txt");
-            while (reader.EndOfStream == false)
-            {
-                string line = reader.ReadLine();
-                Console.WriteLine(line);
-            }
-
-            var input = File.ReadAllLines("rushOrder.txt");
-            int cols = surfaceArea;
-            int rows = days;
-            int[][] readArray = new int[cols][];
-
-            for (int i = 0; i < cols; i++)
-            {
-                for (int j = 0; j < rows; j++)
-                {
-                    readArray[i][j] = 0;
-                }
-
-            }
-            reader.Close();
-            return 0;
-        }
-            /* if (days == 3)
-             {
-                 if (surfaceArea < 1000)
-                 {
-                     return 60;
-                 }
-                 else if (surfaceArea >= 1000 && surfaceArea <= 2000)
-                 {
-                     return 70;
-                 }
-                 else if (surfaceArea > 2000)
-                 {
-                     return 80;
-                 }
-                 else
-                 {
-                     MessageBox.Show("How did you even do this", "CATASTROPHIC ERROR");
-                 }
-             }
-             else if (days == 5)
-             {
-                 if (surfaceArea < 1000)
-                 {
-                     return 40;
-                 }
-                 else if (surfaceArea >= 1000 && surfaceArea <= 2000)
-                 {
-                     return 50;
-                 }
-                 else if (surfaceArea > 2000)
-                 {
-                     return 60;
-                 }
-                 else
-                 {
-                     MessageBox.Show("How did you even do this", "CATASTROPHIC ERROR");
-                 }
-             }
-             else if (days == 7)
-             {
-                 if (surfaceArea < 1000)
-                 {
-                     return 30;
-                 }
-                 else if (surfaceArea >= 1000 && surfaceArea <= 2000)
-                 {
-                     return 35;
-                 }
-                 else if (surfaceArea > 2000)
-                 {
-                     return 40;
-                 }
-                 else
-                 {
-                     MessageBox.Show("How did you even do this", "CATASTROPHIC ERROR");
-                 }
-             }
-             return 1;*/
-        
-
->>>>>>> 1ab0304d7f10ed62e4a70bd914d0cd38e4e5ceed
+           
         // calculate cost of surface area
         private int SurfaceAreaCost(int size)
         {
@@ -251,34 +163,21 @@ namespace MegaDesk_3_BradKellogg
 
         public void outputToJson(string filePath, DeskQuote desk)
         {
+            // Assisted Attempt
+            var jsonFile = JsonConvert.SerializeObject(desk);
 
-            /* Attempt 1 
-            File.WriteAllText(@filePath, JsonConvert.SerializeObject(desk));
-
-            /* Attempt 2 
-            using (StreamWriter file = File.CreateText(@filePath))
-            {
-                JsonSerializer serializer = new JsonSerializer();
-                serializer.Serialize(file, desk);
-            }
-            */
-
-            /* Attempt 2 */
             if (!File.Exists(filePath))
             {
-                File.Create(filePath);
-                File.WriteAllText(filePath, JsonConvert.SerializeObject(desk));
+                using (StreamWriter sw = File.CreateText(@filePath))
+                {
+                    // done
+                }
             }
-
-            else if (File.Exists(filePath))
+            using (StreamWriter sw = File.AppendText(@filePath))
             {
-                File.WriteAllText(filePath, JsonConvert.SerializeObject(desk));
+                sw.WriteLine(jsonFile);
             }
-
-            /* Attempt 3
-            string json = JsonConvert.SerializeObject(desk, Formatting.Indented);
-            System.IO.File.AppendAllText(@filePath, json);
-            */
+            
         }
     }
 

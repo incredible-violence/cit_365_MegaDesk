@@ -1,1 +1,1 @@
-Customer Name: yyyyy	Quote Amount: 600	Quote Date: 02/15/19 12:00:00 AM	Desk Width: 24	Desk Depth: 24	Drawers: 4	Rush Days: 7
+Customer Name: b	Quote Amount: 752	Quote Date: 02/16/19 12:00:00 AM	Desk Width: 33	Desk Depth: 44	Drawers: 1	Rush Days: 0
