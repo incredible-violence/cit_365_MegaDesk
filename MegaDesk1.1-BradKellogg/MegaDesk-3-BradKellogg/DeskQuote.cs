@@ -66,90 +66,63 @@ namespace MegaDesk_3_BradKellogg
             return newDesk.numDrawers * PRICE_DRAWER;
         }
 
-        // calculate cost for surface material
-        private int SurfaceMaterialCost(string mat)
-        {
-            switch (mat)
-            {
-                case "Oak":
-                    return 200;
-                case "Laminate":
-                    return 100;
-                case "Pine":
-                    return 50;
-                case "Rosewood":
-                    return 300;
-                case "Veneer":
-                    return 125;
-                default:
-                    break;
-            }
-            return 1;
-        }
-
         // Calculate Rush Cost
         private int RushCost(int surfaceArea, int days)
         {
-            if (days == 3)
-            {
-                if (surfaceArea < 1000)
-                {
-                    return 60;
-                }
-                else if (surfaceArea >= 1000 && surfaceArea <= 2000)
-                {
-                    return 70;
-                }
-                else if (surfaceArea > 2000)
-                {
-                    return 80;
-                }
-                else
-                {
-                    MessageBox.Show("How did you even do this", "CATASTROPHIC ERROR");
-                }
-            }
-            else if (days == 5)
-            {
-                if (surfaceArea < 1000)
-                {
-                    return 40;
-                }
-                else if (surfaceArea >= 1000 && surfaceArea <= 2000)
-                {
-                    return 50;
-                }
-                else if (surfaceArea > 2000)
-                {
-                    return 60;
-                }
-                else
-                {
-                    MessageBox.Show("How did you even do this", "CATASTROPHIC ERROR");
-                }
-            }
-            else if (days == 7)
-            {
-                if (surfaceArea < 1000)
-                {
-                    return 30;
-                }
-                else if (surfaceArea >= 1000 && surfaceArea <= 2000)
-                {
-                    return 35;
-                }
-                else if (surfaceArea > 2000)
-                {
-                    return 40;
-                }
-                else
-                {
-                    MessageBox.Show("How did you even do this", "CATASTROPHIC ERROR");
-                }
-            }
-            return 1;
-        }
+            StreamReader reader = new StreamReader(@"rushOrder.txt");
 
+            // James' Attempt
+            int[,] priceMap = new int[3, 3];
+
+            for (int i = 0; i < 3; i++)
+            {
+                for (int j = 0; j < 3; j++)
+                {
+                    Int32.TryParse(reader.ReadLine(), out priceMap[i, j]);
+
+                    MessageBox.Show(
+                        "i: " + i + "\t" +
+                        "j: " + j + "\t" +
+                        "Value:" + priceMap[i, j]);
+                }
+            }
+
+            reader.Close();
+
+            switch (days)
+            {
+                case 3:
+                    if (surfaceArea < 1000)
+                        return priceMap[0, 0];
+                    else if (surfaceArea >= 1000 && surfaceArea <= 2000)
+                        return priceMap[0, 1];
+                    else if (surfaceArea > 2000)
+                        return priceMap[0, 2];
+                    break;
+                case 5:
+                    if (surfaceArea < 1000)
+                        return priceMap[1, 0];
+                    else if (surfaceArea >= 1000 && surfaceArea <= 2000)
+                        return priceMap[1, 1];
+                    else if (surfaceArea > 2000)
+                        return priceMap[1, 2];
+                    break;
+                case 7:
+                    if (surfaceArea < 1000)
+                        return priceMap[2, 0];
+                    else if (surfaceArea >= 1000 && surfaceArea <= 2000)
+                        return priceMap[2, 1];
+                    else if (surfaceArea > 2000)
+                        return priceMap[2, 2];
+                    break;
+                case 0:
+                    return 0;
+                default:
+                    break;
+            }
+            return 0;
+        }
+    
         // calculate cost of surface area
         private int SurfaceAreaCost(int size)
         {

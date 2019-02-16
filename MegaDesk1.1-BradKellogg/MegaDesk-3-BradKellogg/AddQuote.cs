@@ -19,6 +19,7 @@ namespace MegaDesk_3_BradKellogg
             InitializeComponent();
             List<Material> materials = Enum.GetValues(typeof(Material)).Cast<Material>().ToList();
             materialComboBox.DataSource = materials;
+            
         }
 
         private void AddQuoteButton_Click(object sender, EventArgs e)
