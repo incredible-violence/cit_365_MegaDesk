@@ -23,5 +23,12 @@ namespace MegaDesk_3_BradKellogg
             mainMenu.Show();
             Close();
         }
+
+        private void cancelButton_Click(object sender, EventArgs e)
+        {
+            var mainMenu = (MainMenu)Tag;
+            mainMenu.Show();
+            Close();
+        }
     }
 }
