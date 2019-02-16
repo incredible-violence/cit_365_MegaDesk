@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.IO;
 using System.Windows.Forms;
 using Newtonsoft.Json;
@@ -76,11 +77,12 @@ namespace MegaDesk_3_BradKellogg
                 for (int j = 0; j < 3; j++)
                 {
                     Int32.TryParse(reader.ReadLine(), out priceMap[i, j]);
-
+                    /*
                     MessageBox.Show(
                         "i: " + i + "\t" +
                         "j: " + j + "\t" +
                         "Value:" + priceMap[i, j]);
+                    */
                 }
             }
 
@@ -134,37 +136,37 @@ namespace MegaDesk_3_BradKellogg
 
         public void outputToFile(string filePath, DeskQuote quote)
         {
-            string output = "Customer Name: " + quote.CustomerName + '\t' 
-                + "Quote Amount: " + quote.QuoteAmount + '\t' 
-                + "Quote Date: " + quote.QuoteDate + '\t'
-                + "Desk Width: " + quote.newDesk.getWidth() + '\t'
-                + "Desk Depth: " + quote.newDesk.getDepth() + '\t'
-                + "Drawers: " + quote.newDesk.getNumDrawers() + '\t'
-                + "Rush Days: " + quote.RushDays;
+            string output = 
+                quote.CustomerName              + '\t' 
+                + quote.QuoteAmount             + '\t'
+                + quote.newDesk.deskMaterial    + '\t'
+                + quote.QuoteDate               + '\t'
+                + quote.newDesk.getWidth()      + '\t'
+                + quote.newDesk.getDepth()      + '\t'
+                + quote.newDesk.getNumDrawers() + '\t'
+                + quote.RushDays                + '\n';
 
             if (!File.Exists(filePath))
             {
                 File.Create(filePath);
-                TextWriter tw = new StreamWriter(filePath);
-                tw.WriteLine(output);
-                tw.Close();
+                System.IO.File.AppendAllText(filePath, output);
+       
             }
             else if (File.Exists(filePath))
             {
-                using (var tw = new StreamWriter(filePath))
-                {
-                    tw.WriteLine(output);
-                }
+                System.IO.File.AppendAllText(@filePath, output);
             }
-
-            
-            // OLD VERSION System.IO.File.AppendAllText(@filePath, output);
         }
 
         public void outputToJson(string filePath, DeskQuote desk)
         {
+            List<DeskQuote> listBoi = new List<DeskQuote>
+            {
+                desk
+            };
+            
             // Assisted Attempt
-            var jsonFile = JsonConvert.SerializeObject(desk);
+            string jsonFile = JsonConvert.SerializeObject(listBoi, Formatting.Indented);
 
             if (!File.Exists(filePath))
             {
@@ -173,6 +175,7 @@ namespace MegaDesk_3_BradKellogg
                     // done
                 }
             }
+
             using (StreamWriter sw = File.AppendText(@filePath))
             {
                 sw.WriteLine(jsonFile);
