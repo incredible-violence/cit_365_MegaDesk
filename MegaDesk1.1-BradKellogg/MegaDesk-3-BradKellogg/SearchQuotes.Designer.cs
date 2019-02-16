@@ -54,6 +54,7 @@
             this.SearchComboBox.Name = "SearchComboBox";
             this.SearchComboBox.Size = new System.Drawing.Size(166, 28);
             this.SearchComboBox.TabIndex = 3;
+            this.SearchComboBox.SelectedIndexChanged += new System.EventHandler(this.SearchComboBox_SelectedIndexChanged);
             // 
             // SearchButton
             // 
@@ -64,13 +65,14 @@
             this.SearchButton.TabIndex = 4;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // ResultsBox
             // 
             this.ResultsBox.FormattingEnabled = true;
-            this.ResultsBox.Location = new System.Drawing.Point(12, 59);
+            this.ResultsBox.Location = new System.Drawing.Point(13, 47);
             this.ResultsBox.Name = "ResultsBox";
-            this.ResultsBox.Size = new System.Drawing.Size(307, 420);
+            this.ResultsBox.Size = new System.Drawing.Size(306, 433);
             this.ResultsBox.TabIndex = 5;
             // 
             // SearchQuotes
