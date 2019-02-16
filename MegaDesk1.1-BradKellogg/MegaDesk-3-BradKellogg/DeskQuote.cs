@@ -5,146 +5,224 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace MegaDesk_3_BradKellogg
 {
     class DeskQuote
     {
-        private string firstName;
-        private string lastName;
-        private int rushDays;
-        private float quote;
-        private DateTime orderDate;
+        #region Object member variables
+        private string CustomerName { get; set; }
+        private DateTime QuoteDate = DateTime.Today;
+        private Desk newDesk = new Desk();
+        private int RushDays { get; set; }
+        private int QuoteAmount = 0;
+        #endregion
 
-        public DeskQuote(string firstName, string lastName, int rushDays, DateTime orderDate)
+        #region local variables
+        private int SurfaceArea = 0;
+
+        #endregion
+
+        #region constants
+        private const int PRICE_BASE = 200;
+        private const int SIZE_THRESHOLD = 1000;
+        private const int PRICE_SURFACEAREA = 1;
+        private const int PRICE_DRAWER = 50;
+        #endregion
+        public DeskQuote()
         {
-            this.firstName = firstName;
-            this.lastName = lastName;
-            this.rushDays = rushDays;
-            this.orderDate = orderDate;
+
         }
 
-        public string getfirstName()
+        public DeskQuote(int width,
+            int depth, int drawers,
+            string material, int rushDays,
+            string customer)
         {
-            return firstName;
+            // variables from parameters
+            newDesk.Width = width;
+            newDesk.Depth = depth;
+            newDesk.numDrawers = drawers;
+            //newDesk.deskMaterial = material;
+            RushDays = rushDays;
+            CustomerName = customer;
+
+            // calculated variables
+            SurfaceArea = (newDesk.Width * newDesk.Depth);
+            QuoteAmount = CalculateQuoteTotal(SurfaceArea, RushDays, material);
         }
 
-        public string getlastNAme()
+        // aggregate costs into one number
+        public int CalculateQuoteTotal(int surfaceArea, int rushDays, string deskMat)
         {
-            return lastName;
+            return PRICE_BASE + DrawerCost() + SurfaceMaterialCost(deskMat)
+                + RushCost(surfaceArea, rushDays) + SurfaceAreaCost(surfaceArea);
         }
 
-        public int getRushDays()
+        // calculate cost of drawers
+        private int DrawerCost()
         {
-            return rushDays;
+            return newDesk.numDrawers * PRICE_DRAWER;
         }
 
-        public float getQuote()
+        // calculate cost for surface material
+        
+        private int SurfaceMaterialCost(string mat)
         {
-            return quote;
-        }
-
-        public DateTime getOrderDate()
-        {
-            return orderDate;
-        }
-
-        public void setFirstName(string firstName)
-        {
-            this.firstName = firstName;
-        }
-
-        public void setLastName(string lastName)
-        {
-            this.lastName = lastName;
-        }
-
-        public void setRushDays(int rushDays)
-        {
-            this.rushDays = rushDays;
-        }
-
-        public void setQuote(float quote)
-        {
-            this.quote = quote;
-        }
-
-        public void setOrderDate()
-        {
-            this.orderDate = new DateTime();
-        }
-
-        public float calcRushPrice(int width, int depth)
-        {
-            float price = 0;
-
-            switch (rushDays)
+            switch (mat)
             {
-                case 3:
-                    if (width * depth < 1000)
-                    {
-                        price += 60;
-                    }
-                    else if (width * depth > 2000)
-                    {
-                        price += 80;
-                    }
-                    else
-                    {
-                        price += 70;
-                    }
-                    break;
-                case 5:
-                    if (width * depth < 1000)
-                    {
-                        price += 40;
-                    }
-                    else if (width * depth > 2000)
-                    {
-                        price += 60;
-                    }
-                    else
-                    {
-                        price += 50;
-                    }
-                    break;
-                case 7:
-                    if (width * depth < 1000)
-                    {
-                        price += 30;
-                    }
-                    else if (width * depth > 2000)
-                    {
-                        price += 40;
-                    }
-                    else
-                    {
-                        price += 35;
-                    }
-                    break;
+                case "Oak":
+                    return 200;
+                case "Laminate":
+                    return 100;
+                case "Pine":
+                    return 50;
+                case "Rosewood":
+                    return 300;
+                case "Veneer":
+                    return 125;
                 default:
-                    price = 0;
                     break;
             }
-
-            return price;
+            return 1;
         }
 
-        public void outputToFile(string filePath)
+        // Calculate Rush Cost
+        private int RushCost(int surfaceArea, int days)
         {
-            string output = firstName + ' ' + lastName + '\t' + rushDays + '\t' + quote + '\t' + orderDate + Environment.NewLine;
+            if (days == 3)
+            {
+                if (surfaceArea < 1000)
+                {
+                    return 60;
+                }
+                else if (surfaceArea >= 1000 && surfaceArea <= 2000)
+                {
+                    return 70;
+                }
+                else if (surfaceArea > 2000)
+                {
+                    return 80;
+                }
+                else
+                {
+                    MessageBox.Show("How did you even do this", "CATASTROPHIC ERROR");
+                }
+            }
+            else if (days == 5)
+            {
+                if (surfaceArea < 1000)
+                {
+                    return 40;
+                }
+                else if (surfaceArea >= 1000 && surfaceArea <= 2000)
+                {
+                    return 50;
+                }
+                else if (surfaceArea > 2000)
+                {
+                    return 60;
+                }
+                else
+                {
+                    MessageBox.Show("How did you even do this", "CATASTROPHIC ERROR");
+                }
+            }
+            else if (days == 7)
+            {
+                if (surfaceArea < 1000)
+                {
+                    return 30;
+                }
+                else if (surfaceArea >= 1000 && surfaceArea <= 2000)
+                {
+                    return 35;
+                }
+                else if (surfaceArea > 2000)
+                {
+                    return 40;
+                }
+                else
+                {
+                    MessageBox.Show("How did you even do this", "CATASTROPHIC ERROR");
+                }
+            }
+            return 1;
+        }
+
+        // calculate cost of surface area
+        private int SurfaceAreaCost(int size)
+        {
+            if (size < 1000)
+                return 0;
+            else if (size > 1000)
+                return size - 1000;
+            else
+                return 1;
+        }
+
+        public void outputToFile(string filePath, DeskQuote quote)
+        {
+            string output = "Customer Name: " + quote.CustomerName + '\t' 
+                + "Quote Amount: " + quote.QuoteAmount + '\t' 
+                + "Quote Date: " + quote.QuoteDate + '\t'
+                + "Desk Width: " + quote.newDesk.getWidth() + '\t'
+                + "Desk Depth: " + quote.newDesk.getDepth() + '\t'
+                + "Drawers: " + quote.newDesk.getNumDrawers() + '\t'
+                + "Rush Days: " + quote.RushDays;
+
+            if (!File.Exists(filePath))
+            {
+                File.Create(filePath);
+                TextWriter tw = new StreamWriter(filePath);
+                tw.WriteLine(output);
+                tw.Close();
+            }
+            else if (File.Exists(filePath))
+            {
+                using (var tw = new StreamWriter(filePath))
+                {
+                    tw.WriteLine(output);
+                }
+            }
+
+            
             System.IO.File.AppendAllText(@filePath, output);
         }
 
         public void outputToJson(string filePath, DeskQuote desk)
         {
+
+            /* Attempt 1 
             File.WriteAllText(@filePath, JsonConvert.SerializeObject(desk));
 
+            /* Attempt 2 
             using (StreamWriter file = File.CreateText(@filePath))
             {
                 JsonSerializer serializer = new JsonSerializer();
                 serializer.Serialize(file, desk);
             }
+            */
+
+            /* Attempt 2 */
+            if (!File.Exists(filePath))
+            {
+                File.Create(filePath);
+                File.WriteAllText(filePath, JsonConvert.SerializeObject(desk));
+            }
+
+            else if (File.Exists(filePath))
+            {
+                File.WriteAllText(filePath, JsonConvert.SerializeObject(desk));
+            }
+
+            /* Attempt 3
+            string json = JsonConvert.SerializeObject(desk, Formatting.Indented);
+            System.IO.File.AppendAllText(@filePath, json);
+            */
         }
     }
+
+
 }

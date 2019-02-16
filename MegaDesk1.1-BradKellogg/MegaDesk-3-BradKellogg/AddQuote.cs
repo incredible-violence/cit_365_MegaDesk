@@ -15,22 +15,24 @@ namespace MegaDesk_3_BradKellogg
         public AddQuote()
         {
             InitializeComponent();
+            materialComboBox.DataSource = Enum.GetNames(typeof(Material));
         }
 
         private void AddQuoteButton_Click(object sender, EventArgs e)
         {
             int spaceIndex = nameInput.Text.IndexOf(' ');
-            string tempfName = nameInput.Text.Substring(0, spaceIndex);
-            string tempLName = nameInput.Text.Substring(spaceIndex + 1);
+            string customer = nameInput.Text;
+            int width = int.Parse(widthInput.Text);
+            int depth = int.Parse(depthInput.Text);
+            int drawers = int.Parse(drawersInput.Text);
+            int rushD = int.Parse(rushComboBox.Text);
 
-            Desk desk = new Desk(Int32.Parse(widthInput.Text), Int32.Parse(depthInput.Text), Int32.Parse(drawersInput.Text));
-            desk.setMaterial(materialComboBox.Text);
+            string mats = (string)materialComboBox.SelectedValue; 
+            
 
-            DeskQuote quote = new DeskQuote(tempfName, tempLName, Int32.Parse(rushComboBox.Text), DateTime.Now);
-            quote.setQuote(quote.calcRushPrice(desk.getWidth(), desk.getDepth()) + desk.calcDeskPrice());
+            DeskQuote quote = new DeskQuote(width, depth, drawers, mats, rushD, customer);
 
-            quote.outputToFile("quotes.txt");
-
+            quote.outputToFile("quotes.txt", quote);
             quote.outputToJson("quotes.json", quote);
 
             var mainMenu = (MainMenu)Tag;

@@ -10,26 +10,31 @@ namespace MegaDesk_3_BradKellogg
 
     class Desk
     {
-        private int width;
-        private int depth;
-        private int numDrawers;
-        private Material deskMaterial;
+        public int Width;
+        public int Depth;
+        public int numDrawers;
+        public Material deskMaterial;
+
+        public Desk()
+        {
+
+        }
 
         public Desk(int width, int depth, int numDrawers)
         {
-            this.width = width;
-            this.depth = depth;
+            this.Width = width;
+            this.Depth = depth;
             this.numDrawers = numDrawers;
         }
 
         public int getWidth()
         {
-            return width;
+            return Width;
         }
 
         public int getDepth()
         {
-            return depth;
+            return Depth;
         }
 
         public int getNumDrawers()
@@ -44,12 +49,12 @@ namespace MegaDesk_3_BradKellogg
 
         public void setWidth(int width)
         {
-            this.width = width;
+            this.Width = width;
         }
 
         public void setDepth(int depth)
         {
-            this.depth = depth;
+            this.Depth = depth;
         }
 
         public void setNumDrawers(int number)
@@ -57,38 +62,13 @@ namespace MegaDesk_3_BradKellogg
             this.numDrawers = number;
         }
 
-        public void setMaterial(string material)
-        {
-            switch (material)
-            {
-                case "Laminate":
-                    this.deskMaterial = Material.Laminate;
-                    break;
-                case "Oak":
-                    this.deskMaterial = Material.Oak;
-                    break;
-                case "Rosewood":
-                    this.deskMaterial = Material.Rosewood;
-                    break;
-                case "Veneer":
-                    this.deskMaterial = Material.Veneer;
-                    break;
-                case "Pine":
-                    this.deskMaterial = Material.Pine;
-                    break;
-                default:
-                    Console.WriteLine("Invalid desk material: " + material);
-                    break;
-            }
-        }
-
         public float calcDeskPrice()
         {
             float price = 200;
 
-            if (width * depth > 1000)
+            if (Width * Depth > 1000)
             {
-                price += width * depth;
+                price += Width * Depth;
             }
 
             price += numDrawers * 50;
