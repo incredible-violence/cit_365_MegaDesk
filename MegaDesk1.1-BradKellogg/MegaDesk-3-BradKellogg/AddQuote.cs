@@ -23,27 +23,25 @@ namespace MegaDesk_3_BradKellogg
 
         private void AddQuoteButton_Click(object sender, EventArgs e)
         {
-            int spaceIndex = nameInput.Text.IndexOf(' ');
-            string customer = nameInput.Text;
-            int width = int.Parse(widthInput.Text);
-            int depth = int.Parse(depthInput.Text);
-            int drawers = int.Parse(drawersInput.Text);
-            int rushD = int.Parse(rushComboBox.Text);
-
-            //string mats = (Material)materialComboBox.SelectedValue; 
             try
             {
+                int spaceIndex = nameInput.Text.IndexOf(' ');
+                string customer = nameInput.Text;
+                int width = int.Parse(widthInput.Text);
+                int depth = int.Parse(depthInput.Text);
+                int drawers = int.Parse(drawersInput.Text);
+                int rushD = int.Parse(rushComboBox.Text);
                 mat = (Material)materialComboBox.SelectedValue;
+
+                DeskQuote quote = new DeskQuote(width, depth, drawers, mat, rushD, customer);
+
+                quote.outputToFile("quotes.txt", quote);
+                quote.outputToJson("quotes.json", quote);
             }
             catch (Exception)
             {
 
             }
-
-            DeskQuote quote = new DeskQuote(width, depth, drawers, mats, rushD, customer);
-
-            quote.outputToFile("quotes.txt", quote);
-            quote.outputToJson("quotes.json", quote);
 
             var mainMenu = (MainMenu)Tag;
             mainMenu.Show();

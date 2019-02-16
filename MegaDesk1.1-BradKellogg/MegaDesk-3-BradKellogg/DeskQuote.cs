@@ -37,7 +37,7 @@ namespace MegaDesk_3_BradKellogg
 
         public DeskQuote(int width,
             int depth, int drawers,
-            string material, int rushDays,
+            Material material, int rushDays,
             string customer)
         {
             // variables from parameters
@@ -50,13 +50,13 @@ namespace MegaDesk_3_BradKellogg
 
             // calculated variables
             SurfaceArea = (newDesk.Width * newDesk.Depth);
-            QuoteAmount = CalculateQuoteTotal(SurfaceArea, RushDays, material);
+            QuoteAmount = CalculateQuoteTotal(SurfaceArea, RushDays, (int)material);
         }
 
         // aggregate costs into one number
-        public int CalculateQuoteTotal(int surfaceArea, int rushDays, string deskMat)
+        public int CalculateQuoteTotal(int surfaceArea, int rushDays, int matCost)
         {
-            return PRICE_BASE + DrawerCost() + SurfaceMaterialCost(deskMat)
+            return PRICE_BASE + DrawerCost() + matCost
                 + RushCost(surfaceArea, rushDays) + SurfaceAreaCost(surfaceArea);
         }
 
@@ -67,7 +67,6 @@ namespace MegaDesk_3_BradKellogg
         }
 
         // calculate cost for surface material
-        
         private int SurfaceMaterialCost(string mat)
         {
             switch (mat)
@@ -188,7 +187,7 @@ namespace MegaDesk_3_BradKellogg
             }
 
             
-            System.IO.File.AppendAllText(@filePath, output);
+            // OLD VERSION System.IO.File.AppendAllText(@filePath, output);
         }
 
         public void outputToJson(string filePath, DeskQuote desk)
