@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddQuote));
             this.addQuoteButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.widthInput = new System.Windows.Forms.TextBox();
@@ -58,33 +57,22 @@
             // addQuoteButton
             // 
             this.addQuoteButton.AutoSize = true;
-            this.addQuoteButton.BackColor = System.Drawing.SystemColors.Control;
-            this.addQuoteButton.FlatAppearance.BorderColor = System.Drawing.Color.Lime;
-            this.addQuoteButton.FlatAppearance.BorderSize = 2;
-            this.addQuoteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.addQuoteButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.addQuoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.addQuoteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addQuoteButton.Location = new System.Drawing.Point(174, 292);
             this.addQuoteButton.Name = "addQuoteButton";
-            this.addQuoteButton.Size = new System.Drawing.Size(121, 39);
+            this.addQuoteButton.Size = new System.Drawing.Size(120, 35);
             this.addQuoteButton.TabIndex = 8;
             this.addQuoteButton.Text = "Add Quote";
-            this.addQuoteButton.UseVisualStyleBackColor = false;
+            this.addQuoteButton.UseVisualStyleBackColor = true;
             this.addQuoteButton.Click += new System.EventHandler(this.AddQuoteButton_Click);
             // 
             // cancelButton
             // 
             this.cancelButton.AutoSize = true;
-            this.cancelButton.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.cancelButton.FlatAppearance.BorderSize = 2;
-            this.cancelButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cancelButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.cancelButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButton.Location = new System.Drawing.Point(371, 292);
             this.cancelButton.Name = "cancelButton";
-            this.cancelButton.Size = new System.Drawing.Size(120, 39);
+            this.cancelButton.Size = new System.Drawing.Size(120, 35);
             this.cancelButton.TabIndex = 9;
             this.cancelButton.Text = "Cancel";
             this.cancelButton.UseVisualStyleBackColor = true;
@@ -92,16 +80,10 @@
             // 
             // widthInput
             // 
-            this.widthInput.AcceptsReturn = true;
-            this.widthInput.AcceptsTab = true;
-            this.widthInput.AutoCompleteCustomSource.AddRange(new string[] {
-            "Min 24 Max 36"});
-            this.widthInput.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.widthInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.widthInput.ForeColor = System.Drawing.SystemColors.WindowText;
             this.widthInput.Location = new System.Drawing.Point(153, 126);
             this.widthInput.Name = "widthInput";
-            this.widthInput.Size = new System.Drawing.Size(163, 30);
+            this.widthInput.Size = new System.Drawing.Size(100, 30);
             this.widthInput.TabIndex = 2;
             this.widthInput.Validating += new System.ComponentModel.CancelEventHandler(this.WidthInput_Validating);
             this.widthInput.Validated += new System.EventHandler(this.WidthInput_Validated);
@@ -128,12 +110,10 @@
             // 
             // depthInput
             // 
-            this.depthInput.AcceptsReturn = true;
-            this.depthInput.AcceptsTab = true;
             this.depthInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.depthInput.Location = new System.Drawing.Point(153, 176);
             this.depthInput.Name = "depthInput";
-            this.depthInput.Size = new System.Drawing.Size(163, 30);
+            this.depthInput.Size = new System.Drawing.Size(100, 30);
             this.depthInput.TabIndex = 3;
             this.depthInput.Validating += new System.ComponentModel.CancelEventHandler(this.DepthInput_Validating);
             this.depthInput.Validated += new System.EventHandler(this.DepthInput_Validated);
@@ -154,12 +134,10 @@
             // 
             // heightInput
             // 
-            this.heightInput.AcceptsReturn = true;
-            this.heightInput.AcceptsTab = true;
             this.heightInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.heightInput.Location = new System.Drawing.Point(153, 226);
             this.heightInput.Name = "heightInput";
-            this.heightInput.Size = new System.Drawing.Size(163, 30);
+            this.heightInput.Size = new System.Drawing.Size(100, 30);
             this.heightInput.TabIndex = 4;
             this.heightInput.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.HeightInput_KeyPress);
             // 
@@ -179,12 +157,10 @@
             // 
             // drawersInput
             // 
-            this.drawersInput.AcceptsReturn = true;
-            this.drawersInput.AcceptsTab = true;
             this.drawersInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.drawersInput.Location = new System.Drawing.Point(507, 126);
             this.drawersInput.Name = "drawersInput";
-            this.drawersInput.Size = new System.Drawing.Size(153, 30);
+            this.drawersInput.Size = new System.Drawing.Size(112, 30);
             this.drawersInput.TabIndex = 5;
             this.drawersInput.Validating += new System.ComponentModel.CancelEventHandler(this.DrawersInput_Validating);
             this.drawersInput.Validated += new System.EventHandler(this.DrawersInput_Validated);
@@ -201,8 +177,6 @@
             // 
             // nameInput
             // 
-            this.nameInput.AcceptsReturn = true;
-            this.nameInput.AcceptsTab = true;
             this.nameInput.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nameInput.Location = new System.Drawing.Point(153, 76);
             this.nameInput.Name = "nameInput";
@@ -257,7 +231,7 @@
             "Pine"});
             this.materialComboBox.Location = new System.Drawing.Point(507, 176);
             this.materialComboBox.Name = "materialComboBox";
-            this.materialComboBox.Size = new System.Drawing.Size(153, 32);
+            this.materialComboBox.Size = new System.Drawing.Size(112, 32);
             this.materialComboBox.TabIndex = 6;
             // 
             // rushComboBox
@@ -271,14 +245,13 @@
             "7"});
             this.rushComboBox.Location = new System.Drawing.Point(507, 229);
             this.rushComboBox.Name = "rushComboBox";
-            this.rushComboBox.Size = new System.Drawing.Size(153, 32);
+            this.rushComboBox.Size = new System.Drawing.Size(112, 32);
             this.rushComboBox.TabIndex = 7;
             // 
             // AddQuote
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.ClientSize = new System.Drawing.Size(684, 361);
             this.Controls.Add(this.rushComboBox);
             this.Controls.Add(this.materialComboBox);
@@ -297,10 +270,8 @@
             this.Controls.Add(this.widthInput);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.addQuoteButton);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddQuote";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Add Quote";
+            this.Text = "MegaDesk";
             this.Load += new System.EventHandler(this.AddQuote_Load);
             ((System.ComponentModel.ISupportInitialize)(this.widthErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.depthErrorProvider)).EndInit();

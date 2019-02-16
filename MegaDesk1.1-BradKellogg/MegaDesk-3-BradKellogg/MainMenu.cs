@@ -40,15 +40,5 @@ namespace MegaDesk_3_BradKellogg
             searchQuotesForm.Show(this);
             Hide();
         }
-
-        private void MainMenu_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void exitButton_Click(object sender, EventArgs e)
-        {
-            Close();
-        }
     }
 }

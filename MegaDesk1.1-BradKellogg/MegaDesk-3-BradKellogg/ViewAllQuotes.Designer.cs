@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewAllQuotes));
             this.BackButton = new System.Windows.Forms.Button();
             this.quotesListBox = new System.Windows.Forms.ListBox();
             this.pageTitle = new System.Windows.Forms.Label();
@@ -37,15 +36,10 @@
             // BackButton
             // 
             this.BackButton.AutoSize = true;
-            this.BackButton.FlatAppearance.BorderColor = System.Drawing.Color.Red;
-            this.BackButton.FlatAppearance.BorderSize = 2;
-            this.BackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.BackButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
-            this.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BackButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BackButton.Location = new System.Drawing.Point(289, 286);
+            this.BackButton.Location = new System.Drawing.Point(464, 283);
             this.BackButton.Name = "BackButton";
-            this.BackButton.Size = new System.Drawing.Size(120, 39);
+            this.BackButton.Size = new System.Drawing.Size(120, 35);
             this.BackButton.TabIndex = 1;
             this.BackButton.Text = "Back";
             this.BackButton.UseVisualStyleBackColor = true;
@@ -81,11 +75,8 @@
             this.Controls.Add(this.pageTitle);
             this.Controls.Add(this.quotesListBox);
             this.Controls.Add(this.BackButton);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewAllQuotes";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "View Quotes";
-            this.Load += new System.EventHandler(this.ViewAllQuotes_Load);
+            this.Text = "MegaDesk";
             this.ResumeLayout(false);
             this.PerformLayout();
 

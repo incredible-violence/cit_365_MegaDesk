@@ -63,7 +63,7 @@ namespace MegaDesk_3_BradKellogg
             // Parsing failed
             if (!Int32.TryParse(width, out temp))
             {
-                errorMessage = "Width must be a number between 24 - 96.";
+                errorMessage = "Width must be a number.";
                 return false;
             }
 
@@ -96,7 +96,7 @@ namespace MegaDesk_3_BradKellogg
             // Parsing failed
             if (!Int32.TryParse(depth, out temp))
             {
-                errorMessage = "Depth must be a number between 12 - 48.";
+                errorMessage = "Depth must be a number.";
                 return false;
             }
 
@@ -131,7 +131,7 @@ namespace MegaDesk_3_BradKellogg
             // Parsing failed
             if (!Int32.TryParse(drawers, out temp))
             {
-                errorMessage = "Number of drawers must be a number up to 7.";
+                errorMessage = "Number of drawers must be a number.";
                 return false;
             }
 
