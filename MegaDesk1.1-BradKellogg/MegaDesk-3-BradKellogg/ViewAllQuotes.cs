@@ -33,5 +33,10 @@ namespace MegaDesk_3_BradKellogg
             mainMenu.Show();
             Close();
         }
+
+        private void ViewAllQuotes_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
