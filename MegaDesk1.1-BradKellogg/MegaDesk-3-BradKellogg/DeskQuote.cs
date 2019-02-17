@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace MegaDesk_3_BradKellogg
 {
-    class DeskQuote
+    public class DeskQuote
     {
         #region Object member variables
         private string CustomerName { get; set; }
@@ -49,6 +49,22 @@ namespace MegaDesk_3_BradKellogg
             // calculated variables
             SurfaceArea = (newDesk.Width * newDesk.Depth);
             QuoteAmount = CalculateQuoteTotal(SurfaceArea, RushDays, (int)material);
+        }
+
+        // getters and setters
+        public string getCustomerName()
+        {
+            return CustomerName;
+        }
+
+        public int getQuoteAmount()
+        {
+            return QuoteAmount;
+        }
+
+        public int getRushDays()
+        {
+            return RushDays;
         }
 
         // aggregate costs into one number
@@ -134,7 +150,7 @@ namespace MegaDesk_3_BradKellogg
                 return 1;
         }
 
-        public void outputToFile(string filePath, DeskQuote quote)
+        public string outputToFile(string filePath, DeskQuote quote)
         {
             string output = 
                 quote.CustomerName              + '\t' 
@@ -156,6 +172,7 @@ namespace MegaDesk_3_BradKellogg
             {
                 System.IO.File.AppendAllText(@filePath, output);
             }
+            return output;
         }
 
         public void outputToJson(string filePath, DeskQuote desk)

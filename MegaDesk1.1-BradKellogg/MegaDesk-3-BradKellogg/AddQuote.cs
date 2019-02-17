@@ -36,17 +36,25 @@ namespace MegaDesk_3_BradKellogg
 
                 DeskQuote quote = new DeskQuote(width, depth, drawers, mat, rushD, customer);
 
-                quote.outputToFile("quotes.txt", quote);
+                string newQuote = quote.outputToFile("quotes.txt", quote);
+
+                // not working at the moment - serializer is being weird.
                 quote.outputToJson("quotes.json", quote);
+
+                DisplayQuote displayQuoteForm = new DisplayQuote(quote);
+                displayQuoteForm.Tag = this;
+                displayQuoteForm.Show(this);
+                Hide();
             }
             catch (Exception)
             {
 
             }
-
+            /*
             var mainMenu = (MainMenu)Tag;
             mainMenu.Show();
             Close();
+            */
         }
 
         private void CancelButton_Click(object sender, EventArgs e)

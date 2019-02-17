@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MegaDesk_3_BradKellogg
 {
-    enum Material {
+    public enum Material {
         Laminate = 100,
         Oak = 200,
         Rosewood = 300,

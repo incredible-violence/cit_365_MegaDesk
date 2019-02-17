@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ViewAllQuotes));
             this.BackButton = new System.Windows.Forms.Button();
             this.quotesListBox = new System.Windows.Forms.ListBox();
             this.pageTitle = new System.Windows.Forms.Label();
@@ -75,8 +76,10 @@
             this.Controls.Add(this.pageTitle);
             this.Controls.Add(this.quotesListBox);
             this.Controls.Add(this.BackButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "ViewAllQuotes";
-            this.Text = "MegaDesk";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "View All Quotes";
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -28,3 +28,4 @@ D:\Documents\GitHub\Repositories\cit_365_MegaDesk\MegaDesk1.1-BradKellogg\MegaDe
 D:\Documents\GitHub\Repositories\cit_365_MegaDesk\MegaDesk1.1-BradKellogg\MegaDesk-3-BradKellogg\obj\Debug\MegaDesk1.1-BradKellogg.csproj.CopyComplete
 D:\Documents\GitHub\Repositories\cit_365_MegaDesk\MegaDesk1.1-BradKellogg\MegaDesk-3-BradKellogg\obj\Debug\MegaDesk1.1-BradKellogg.exe
 D:\Documents\GitHub\Repositories\cit_365_MegaDesk\MegaDesk1.1-BradKellogg\MegaDesk-3-BradKellogg\obj\Debug\MegaDesk1.1-BradKellogg.pdb
+D:\Documents\GitHub\Repositories\cit_365_MegaDesk\MegaDesk1.1-BradKellogg\MegaDesk-3-BradKellogg\obj\Debug\MegaDesk_3_BradKellogg.DisplayQuote.resources

@@ -68,5 +68,12 @@ namespace MegaDesk_3_BradKellogg
                 ResultsBox.DataSource = lines;
             }
         }
+
+        private void backButton_SearchQuotes_Click(object sender, EventArgs e)
+        {
+            var mainMenu = (MainMenu)Tag;
+            mainMenu.Show();
+            Close();
+        }
     }
 }

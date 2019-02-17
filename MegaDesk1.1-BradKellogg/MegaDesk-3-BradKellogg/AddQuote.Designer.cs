@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AddQuote));
             this.addQuoteButton = new System.Windows.Forms.Button();
             this.cancelButton = new System.Windows.Forms.Button();
             this.widthInput = new System.Windows.Forms.TextBox();
@@ -57,25 +58,27 @@
             // addQuoteButton
             // 
             this.addQuoteButton.AutoSize = true;
-            this.addQuoteButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addQuoteButton.BackColor = System.Drawing.Color.LightSkyBlue;
+            this.addQuoteButton.Font = new System.Drawing.Font("Hack", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addQuoteButton.Location = new System.Drawing.Point(174, 292);
             this.addQuoteButton.Name = "addQuoteButton";
-            this.addQuoteButton.Size = new System.Drawing.Size(120, 35);
+            this.addQuoteButton.Size = new System.Drawing.Size(128, 35);
             this.addQuoteButton.TabIndex = 8;
             this.addQuoteButton.Text = "Add Quote";
-            this.addQuoteButton.UseVisualStyleBackColor = true;
+            this.addQuoteButton.UseVisualStyleBackColor = false;
             this.addQuoteButton.Click += new System.EventHandler(this.AddQuoteButton_Click);
             // 
             // cancelButton
             // 
             this.cancelButton.AutoSize = true;
-            this.cancelButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cancelButton.BackColor = System.Drawing.Color.Red;
+            this.cancelButton.Font = new System.Drawing.Font("Hack", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cancelButton.Location = new System.Drawing.Point(371, 292);
             this.cancelButton.Name = "cancelButton";
             this.cancelButton.Size = new System.Drawing.Size(120, 35);
             this.cancelButton.TabIndex = 9;
             this.cancelButton.Text = "Cancel";
-            this.cancelButton.UseVisualStyleBackColor = true;
+            this.cancelButton.UseVisualStyleBackColor = false;
             this.cancelButton.Click += new System.EventHandler(this.CancelButton_Click);
             // 
             // widthInput
@@ -270,8 +273,10 @@
             this.Controls.Add(this.widthInput);
             this.Controls.Add(this.cancelButton);
             this.Controls.Add(this.addQuoteButton);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AddQuote";
-            this.Text = "MegaDesk";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
+            this.Text = "Add a Quote";
             this.Load += new System.EventHandler(this.AddQuote_Load);
             ((System.ComponentModel.ISupportInitialize)(this.widthErrorProvider)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.depthErrorProvider)).EndInit();
